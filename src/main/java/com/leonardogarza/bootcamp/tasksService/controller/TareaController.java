@@ -64,7 +64,7 @@ public class TareaController {
             if (usuario.isEmpty()){
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no encontrado");
             }
-            return ResponseEntity.ok(tareaRepository.findById(id)
+            return tareaRepository.findById(id)
                     .map(tarea -> {
                         tarea.setTitulo(updatedTarea.getTitulo());
                         tarea.setDescripcion(updatedTarea.getDescripcion());
@@ -72,11 +72,8 @@ public class TareaController {
                         tarea.setFechaLimite(updatedTarea.getFechaLimite());
                         tarea.setUsuarioAsignado(updatedTarea.getUsuarioAsignado());
                         tareaRepository.save(tarea);
-                        return ResponseEntity.noContent().build();
-                    }).orElseGet(() -> {
-                        tareaRepository.save(updatedTarea);
-                        return ResponseEntity.ok(updatedTarea);
-                    }));
+                        return ResponseEntity.ok().build();
+                    }).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
         } catch(Exception e){
             return ResponseEntity.internalServerError().build();
         }

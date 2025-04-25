@@ -53,16 +53,13 @@ public class UsuarioController {
     @PutMapping("/{id}")
     public ResponseEntity<?> updateUsuario(@RequestBody Usuario updatedUsuario, @PathVariable Long id){
         try {
-            return ResponseEntity.ok(usuarioRepository.findById(id)
+            return usuarioRepository.findById(id)
                     .map(usuario -> {
                         usuario.setNombre(updatedUsuario.getNombre());
                         usuario.setEmail(updatedUsuario.getEmail());
                         usuarioRepository.save(usuario);
-                        return ResponseEntity.noContent().build();
-                    }).orElseGet(() -> {
-                        usuarioRepository.save(updatedUsuario);
                         return ResponseEntity.ok(updatedUsuario);
-                    }));
+                    }).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
         } catch(Exception e){
             return ResponseEntity.internalServerError().build();
         }
