@@ -27,6 +27,7 @@ public class TareaControllerTests {
     @Autowired
     TestRestTemplate restTemplate;
 
+    // Valida que retorne todas las tareas exitosamente
     @Test
     void retornaListaTareas() {
         ResponseEntity<String> response = restTemplate.getForEntity("/tareas", String.class);
@@ -47,6 +48,7 @@ public class TareaControllerTests {
         assertThat(titulos).containsExactlyInAnyOrder("Proyecto Bootcamp", "Presentacion Trabajo", "Nota Verde");
     }
 
+    // Valida que retorne exitosamente una tarea por Id
     @Test
     void retornaUnTareaPorId() {
 
@@ -76,7 +78,7 @@ public class TareaControllerTests {
         assertThat(usuario).isEqualTo(3);
     }
 
-    //Valida que el servicio devuelva un 404 cuando no encuentra un tarea
+    // Valida que el servicio devuelva un 404 cuando no encuentra una tarea
     @Test
     void shouldNotReturnAnTareaWithAnUnknownId() {
         ResponseEntity<String> response = restTemplate
@@ -85,7 +87,7 @@ public class TareaControllerTests {
         assertThat(response.getBody()).isBlank();
     }
 
-    // Valida que el servicio crea un nuevo tarea
+    // Valida que el servicio crea una nueva tarea
     @Test
     @DirtiesContext
     void shouldCreateANewTarea() {
@@ -144,7 +146,7 @@ public class TareaControllerTests {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
-    //Valida que el servicio actualice correctamente un tarea existente
+    // Valida que el servicio actualice correctamente una tarea existente
     @Test
     @DirtiesContext
     void shouldUpdateAnExistingTarea() {
@@ -205,7 +207,7 @@ public class TareaControllerTests {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
-    //Valida que el servicio regrese un not found cuando se intenta actualizar una tarea inexistente
+    // Valida que el servicio regrese un not found cuando se intenta actualizar una tarea inexistente
     @Test
     @DirtiesContext
     void shouldNotUpdateAnNonExistingUsuario() {
@@ -220,7 +222,7 @@ public class TareaControllerTests {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
-    // Valida que el servicio elimine un tarea existente correctamente
+    // Valida que el servicio elimine una tarea existente correctamente
     @Test
     @DirtiesContext
     void shouldDeleteAnTareaById() {
@@ -233,7 +235,7 @@ public class TareaControllerTests {
         assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
-    //Valida que el servicio regrese un not found cuando se intenta eliminar una tarea inexistente
+    // Valida que el servicio regrese un not found cuando se intenta eliminar una tarea inexistente
     @Test
     @DirtiesContext
     void shouldNotDeleteAnNonExistingTarea() {

@@ -24,6 +24,7 @@ public class UsuarioControllerTests {
     @Autowired
     TestRestTemplate restTemplate;
 
+    // Valida que retorne la lista de todos los usuarios correctamente
     @Test
     void retornaListaUsuarios() {
         ResponseEntity<String> response = restTemplate.getForEntity("/usuarios", String.class);
@@ -44,6 +45,7 @@ public class UsuarioControllerTests {
         assertThat(nombres).containsExactlyInAnyOrder("Leonardo G", "Mich B", "Juan Carlos Bodoque", "Rodolfo el Reno");
     }
 
+    // Valida que retorne un usuario buscado por Id correctamente
     @Test
     void retornaUnUsuarioPorId() {
 
@@ -65,7 +67,7 @@ public class UsuarioControllerTests {
         assertThat(email).isEqualTo("notaverde@21minutos.com");
     }
 
-    //Valida que el servicio devuelva un 404 cuando no encuentra un usuario
+    // Valida que el servicio devuelva un 404 cuando no encuentra un usuario
     @Test
     void shouldNotReturnAnUsuarioWithAnUnknownId() {
         ResponseEntity<String> response = restTemplate
@@ -98,7 +100,7 @@ public class UsuarioControllerTests {
         assertThat(email).isEqualTo("prueba@prueba.com");
     }
 
-    //Valida que el servicio actualice correctamente un usuario existente
+    // Valida que el servicio actualice correctamente un usuario existente
     @Test
     @DirtiesContext
     void shouldUpdateAnExistingUsuario() {
@@ -122,7 +124,7 @@ public class UsuarioControllerTests {
         assertThat(email).isEqualTo("prueba@prueba.com");
     }
 
-    //Valida que el servicio regrese un not found cuando se intenta actualizar un usuario inexistente
+    // Valida que el servicio regrese un not found cuando se intenta actualizar un usuario inexistente
     @Test
     @DirtiesContext
     void shouldNotUpdateAnNonExistingUsuario() {
@@ -147,7 +149,7 @@ public class UsuarioControllerTests {
         assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
-    //Valida que el servicio regrese un not found cuando se intenta eliminar un usuario inexistente
+    // Valida que el servicio regrese un not found cuando se intenta eliminar un usuario inexistente
     @Test
     @DirtiesContext
     void shouldNotDeleteAnNonExistingUsuario() {

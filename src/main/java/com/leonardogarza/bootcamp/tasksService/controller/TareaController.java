@@ -40,7 +40,7 @@ public class TareaController {
     public ResponseEntity<?> createTarea(@RequestBody Tarea newTarea, UriComponentsBuilder ucb){
         try {
             if (!Constantes.ESTADOS_VALIDOS.contains(newTarea.getEstado())) {
-                return ResponseEntity.badRequest().body("Estado de tarea inválido");
+                return ResponseEntity.badRequest().body("Estado de tarea inválido, estados válidos: " + Constantes.ESTADOS_VALIDOS);
             }
             Optional<Usuario> usuario = usuarioRepository.findById(newTarea.getUsuarioAsignado().getId());
             if (usuario.isEmpty()){
@@ -58,7 +58,7 @@ public class TareaController {
     public ResponseEntity<?> updateTarea(@RequestBody Tarea updatedTarea, @PathVariable Long id){
         try {
             if (!Constantes.ESTADOS_VALIDOS.contains(updatedTarea.getEstado())) {
-                return ResponseEntity.badRequest().body("Estado de tarea inválido");
+                return ResponseEntity.badRequest().body("Estado de tarea inválido, estados válidos: " + Constantes.ESTADOS_VALIDOS);
             }
             Optional<Usuario> usuario = usuarioRepository.findById(updatedTarea.getUsuarioAsignado().getId());
             if (usuario.isEmpty()){

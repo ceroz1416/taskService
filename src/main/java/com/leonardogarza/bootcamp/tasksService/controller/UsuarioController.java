@@ -23,11 +23,6 @@ public class UsuarioController {
         this.tareaRepository = tareaRepository;
     }
 
-    @GetMapping("/holamundo")
-    public static ResponseEntity<String> holaMundo() {
-        return ResponseEntity.ok("Hola Mundo! Project Works!");
-    }
-
     @GetMapping
     public ResponseEntity<List<Usuario>> listAll(){
         return ResponseEntity.ok(usuarioRepository.findAll());
