@@ -10,244 +10,516 @@
 			"name": "Proyecto Final",
 			"item": [
 				{
-					"name": "Usuarios",
+					"name": "Local",
 					"item": [
 						{
-							"name": "updateUser",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"nombre\" : \"Michel Becerra\",\r\n    \"email\" : \"michbc@gmail.com\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
+							"name": "Usuarios",
+							"item": [
+								{
+									"name": "updateUser",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\" : \"Michel Becerra\",\r\n    \"email\" : \"michbc@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/usuarios/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"usuarios",
+												"2"
+											]
 										}
-									}
+									},
+									"response": []
 								},
-								"url": {
-									"raw": "http://localhost:8080/usuarios/2",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"usuarios",
-										"2"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "createUser",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"nombre\" : \"Michel Becerra\",\r\n    \"email\" : \"michbc@gmail.com\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
+								{
+									"name": "createUser",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\" : \"Michel Becerra\",\r\n    \"email\" : \"michbc@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/usuarios",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"usuarios"
+											]
 										}
-									}
+									},
+									"response": []
 								},
-								"url": {
-									"raw": "http://localhost:8080/usuarios",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"usuarios"
-									]
+								{
+									"name": "listAllUsers",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/usuarios",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"usuarios"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "findUserById",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/usuarios/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"usuarios",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deleteUser",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/usuarios/4",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"usuarios",
+												"4"
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
+							]
 						},
 						{
-							"name": "listAllUsers",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/usuarios",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"usuarios"
-									]
+							"name": "Tareas",
+							"item": [
+								{
+									"name": "createTask",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"titulo\": \"pechochida\",\r\n    \"descripcion\": \"Bonita\",\r\n    \"estado\": \"En progreso\",\r\n    \"fechaLimite\": \"2025-03-02\",\r\n    \"usuarioAsignado\": {\r\n        \"id\": 2\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tareas",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tareas"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "updateTask",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"titulo\": \"proyectoBootcamp\",\r\n    \"descripcion\": \"Proyecto final del bootcampo de microservicios con java\",\r\n    \"estado\": \"En progreso\",\r\n    \"fechaLimite\": \"2025-06-02\",\r\n    \"usuarioAsignado\": {\r\n        \"id\": 2\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/tareas/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tareas",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "listAllTasks",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/tareas",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tareas"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "findTaskById",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/tareas/3",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tareas",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deleteTask",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/tareas/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"tareas",
+												"2"
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
-						},
-						{
-							"name": "findUserById",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/usuarios/2",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"usuarios",
-										"2"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "deleteUser",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/usuarios/4",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"usuarios",
-										"4"
-									]
-								}
-							},
-							"response": []
+							]
 						}
 					]
 				},
 				{
-					"name": "Tareas",
+					"name": "Google Cloud",
 					"item": [
 						{
-							"name": "createTask",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"titulo\": \"pechochida\",\r\n    \"descripcion\": \"Bonita\",\r\n    \"estado\": \"En progreso\",\r\n    \"fechaLimite\": \"2025-03-02\",\r\n    \"usuarioAsignado\": {\r\n        \"id\": 2\r\n    }\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
+							"name": "Usuarios",
+							"item": [
+								{
+									"name": "updateUser",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\" : \"Michel Becerra\",\r\n    \"email\" : \"michbc@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://tasksservice-351250026531.northamerica-south1.run.app/usuarios/2",
+											"protocol": "https",
+											"host": [
+												"tasksservice-351250026531",
+												"northamerica-south1",
+												"run",
+												"app"
+											],
+											"path": [
+												"usuarios",
+												"2"
+											]
 										}
-									}
+									},
+									"response": []
 								},
-								"url": {
-									"raw": "http://localhost:8080/tareas",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"tareas"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "updateTask",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"titulo\": \"proyectoBootcamp\",\r\n    \"descripcion\": \"Proyecto final del bootcampo de microservicios con java\",\r\n    \"estado\": \"En progreso\",\r\n    \"fechaLimite\": \"2025-06-02\",\r\n    \"usuarioAsignado\": {\r\n        \"id\": 2\r\n    }\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
+								{
+									"name": "createUser",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\" : \"Michel Becerra\",\r\n    \"email\" : \"michbc@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://tasksservice-351250026531.northamerica-south1.run.app/usuarios",
+											"protocol": "https",
+											"host": [
+												"tasksservice-351250026531",
+												"northamerica-south1",
+												"run",
+												"app"
+											],
+											"path": [
+												"usuarios"
+											]
 										}
-									}
+									},
+									"response": []
 								},
-								"url": {
-									"raw": "http://localhost:8080/tareas/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"tareas",
-										"1"
-									]
+								{
+									"name": "listAllUsers",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://tasksservice-351250026531.northamerica-south1.run.app/usuarios",
+											"protocol": "https",
+											"host": [
+												"tasksservice-351250026531",
+												"northamerica-south1",
+												"run",
+												"app"
+											],
+											"path": [
+												"usuarios"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "findUserById",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://tasksservice-351250026531.northamerica-south1.run.app/usuarios/2",
+											"protocol": "https",
+											"host": [
+												"tasksservice-351250026531",
+												"northamerica-south1",
+												"run",
+												"app"
+											],
+											"path": [
+												"usuarios",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deleteUser",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://tasksservice-351250026531.northamerica-south1.run.app/usuarios/4",
+											"protocol": "https",
+											"host": [
+												"tasksservice-351250026531",
+												"northamerica-south1",
+												"run",
+												"app"
+											],
+											"path": [
+												"usuarios",
+												"4"
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
+							]
 						},
 						{
-							"name": "listAllTasks",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/tareas",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"tareas"
-									]
+							"name": "Tareas",
+							"item": [
+								{
+									"name": "createTask",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"titulo\": \"pechochida\",\r\n    \"descripcion\": \"Bonita\",\r\n    \"estado\": \"En progreso\",\r\n    \"fechaLimite\": \"2025-03-02\",\r\n    \"usuarioAsignado\": {\r\n        \"id\": 2\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://tasksservice-351250026531.northamerica-south1.run.app/tareas",
+											"protocol": "https",
+											"host": [
+												"tasksservice-351250026531",
+												"northamerica-south1",
+												"run",
+												"app"
+											],
+											"path": [
+												"tareas"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "updateTask",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"titulo\": \"proyectoBootcamp\",\r\n    \"descripcion\": \"Proyecto final del bootcampo de microservicios con java\",\r\n    \"estado\": \"En progreso\",\r\n    \"fechaLimite\": \"2025-06-02\",\r\n    \"usuarioAsignado\": {\r\n        \"id\": 2\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://tasksservice-351250026531.northamerica-south1.run.app/tareas/1",
+											"protocol": "https",
+											"host": [
+												"tasksservice-351250026531",
+												"northamerica-south1",
+												"run",
+												"app"
+											],
+											"path": [
+												"tareas",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "listAllTasks",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://tasksservice-351250026531.northamerica-south1.run.app/tareas",
+											"protocol": "https",
+											"host": [
+												"tasksservice-351250026531",
+												"northamerica-south1",
+												"run",
+												"app"
+											],
+											"path": [
+												"tareas"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "findTaskById",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://tasksservice-351250026531.northamerica-south1.run.app/tareas/3",
+											"protocol": "https",
+											"host": [
+												"tasksservice-351250026531",
+												"northamerica-south1",
+												"run",
+												"app"
+											],
+											"path": [
+												"tareas",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deleteTask",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://tasksservice-351250026531.northamerica-south1.run.app/tareas/2",
+											"protocol": "https",
+											"host": [
+												"tasksservice-351250026531",
+												"northamerica-south1",
+												"run",
+												"app"
+											],
+											"path": [
+												"tareas",
+												"2"
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
-						},
-						{
-							"name": "findTaskById",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/tareas/3",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"tareas",
-										"3"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "deleteTask",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/tareas/2",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"tareas",
-										"2"
-									]
-								}
-							},
-							"response": []
+							]
 						}
 					]
 				}
